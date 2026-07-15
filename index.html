@@ -197,6 +197,29 @@
       margin-top: 32px;
     }
 
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 32px;
+    }
+
+    .stack-card {
+      min-width: 0;
+      padding: 22px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .stack-card > p {
+      margin: 12px 0 18px;
+      color: var(--muted);
+    }
+
+    .stack-card .tags { margin: 0; }
+
     .project-card {
       display: flex;
       flex-direction: column;
@@ -303,7 +326,7 @@
     .site-footer a { color: #fff; }
 
     @media (max-width: 800px) {
-      .project-grid, .friends-grid { grid-template-columns: 1fr; }
+      .project-grid, .stack-grid, .friends-grid { grid-template-columns: 1fr; }
       .section-heading { grid-template-columns: 1fr; }
     }
 
@@ -337,13 +360,49 @@
     <section class="hero" id="home" aria-labelledby="intro-title">
       <div class="hero-content">
         <p class="eyebrow">自我介绍</p>
-        <h1 id="intro-title">Yaochen</h1>
-        <p class="hero-summary">想着既然是在这行了总该要有个个人网页了。可以叫我曜尘,爱好和专业是EE/CS相关,本科通信工程但是有个数字IC的梦。希望壁纸的画手老师不会介意我拿来做主页背景qwq</p>
+        <h1 id="intro-title">我是曜尘 Yaochen</h1>
+        <p class="hero-summary">想着既然是在这行了总该要有个个人网页(?)我的爱好和专业是EE/CS相关,很杂食。本科通信工程但是有个数字IC的梦（希望能保上吧）。希望壁纸的画手老师不会介意我拿来做主页背景qwq</p>
         <ul class="meta-list" aria-label="个人信息">
           <li>中国 · 成都/广州</li>
           <li>学生 </li>
         </ul>
         <a class="button" href="#projects">浏览更多 ↓</a>
+      </div>
+    </section>
+
+    <section class="section" id="stacks" aria-labelledby="stacks-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">个人能力</p>
+          <h2 id="stacks-title">技术栈</h2>
+        </div>
+        <p>拥有软硬件协同、嵌入式系统、芯片验证与硬件实现的工程能力。</p>
+      </div>
+
+      <div class="stack-grid">
+        <article class="stack-card">
+          <h3>异构FPGA开发</h3>
+          <p>面向 Zynq 平台开展 ARM/PL 协同开发，实现基于AXI数据交换和控制处理。</p>
+          <ul class="tags" aria-label="相关工具"><li>Vitis Unified IDE</li><li>Vivado</li><li>Model Composer</li></ul>
+        </article>
+
+        <article class="stack-card">
+          <h3>嵌入式开发</h3>
+          <p>基于 STM32和其他arm内核MCU 完成外设驱动与应用固件开发，覆盖 HAL库/寄存器级开发和调试。</p>
+          <ul class="tags" aria-label="相关工具"> <li>ARM</li> <li>Keil MDK</li></ul>
+        </article>
+
+        <article class="stack-card">
+          <h3>数字 IC 设计与验证</h3>
+          <p>使用 SystemVerilog 搭建数字逻辑验证环境，进行 VCS 仿真、Verdi 波形分析与调试。</p>
+          <ul class="tags" aria-label="相关工具"><li>SystemVerilog</li><li>VCS</li><li>Verdi</li></ul>
+        </article>
+
+        <article class="stack-card">
+          <h3>PCB 设计</h3>
+          <p>完成原理图绘制、PCB Layout 与制板文件输出，兼顾器件封装、布局布线和可制造性检查。</p>
+          <ul class="tags" aria-label="相关工具"><li>Altium Designer</li><li>嘉立创 EDA</li></ul>
+        </article>
       </div>
     </section>
 
@@ -405,10 +464,11 @@
             <h3>ConstStrings</h3>
             <p>在通信领域和电赛等比赛都有结果的一位佬</p>
           </a>
-          <!-- <a class="friend-link" href="https://www.bilibili.com/" target="_blank" rel="noreferrer">
-            <h3>创作与分享</h3>
-            <p>替换为你常看的频道、社群或内容站点。</p>
+          <a class="friend-link" href="https://github.com/ljm12914" target="_blank" rel="noreferrer">
+            <h3>LJM12914</h3>
+            <p>计算机大手，开源社区积极参与者</p>
           </a>
+<!--           
           <a class="friend-link" href="https://developer.mozilla.org/" target="_blank" rel="noreferrer">
             <h3>学习资源</h3>
             <p>替换为对你有帮助的文档、博客或资料库。</p>
